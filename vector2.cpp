@@ -21,7 +21,6 @@ vector2::vector2(const vector2& other)
 
 vector2::~vector2()
 {
-	std::cout<<"vector2 destructor called"<<std::endl;
 }
 
 vector2& vector2::operator=(const vector2 &other)
@@ -53,6 +52,22 @@ vector2 vector2::operator-() const
 	vector2 temp = *this;
 	temp[0] = -temp[0];
 	temp[1] = -temp[1];
+	return (temp);
+}
+
+vector2 vector2::operator+(const vector2 &other) const
+{
+	vector2 temp = *this;
+	temp.x += other.x;
+	temp.y += other.y;
+	return (temp);
+}
+
+vector2 vector2::operator-(const vector2 &other) const
+{
+	vector2 temp = *this;
+	temp.x -= other.x;
+	temp.y -= other.y;
 	return (temp);
 }
 
@@ -99,7 +114,30 @@ vector2 &vector2::operator-=(const vector2& other)
 	return (*this);
 }
 
+//*=
 
+vector2 &vector2::operator*=(const vector2 &other)
+{
+	this->x *= other.x;
+	this->y *= other.y;
+	return (*this);
+}
+
+//operations with number 
+
+vector2 vector2::operator*(int number) const
+{
+	vector2 temp = *this;
+	temp.x = this->x * number;
+	temp.y = this->y * number;
+	return (temp);
+}
+vector2& vector2::operator*=(int number)
+{
+	this->x *= number;
+	this->y *= number;
+	return (*this);
+}
 std::ostream& operator<<(std::ostream &ostream, const vector2 &v)
 {
 	std::cout<< "{" << v[0] << ", " << v[1] << "}"<<std::endl;
