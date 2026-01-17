@@ -4,144 +4,26 @@ vector2::vector2()
 {
 	this->x = 0;
 	this->y = 0;
-	std::cout<<"vector2 standard constructor called"<<std::endl;
+	std::cout<<"Construvtor called"<<std::endl;
 }
-
-vector2::vector2(int num1, int num2)
+vector2::vector2(int x, int y)
 {
-	this->x = num1;
-	this->y = num2;
-	std::cout<<"Parametirized constructor called"<<std::endl;
+	this->x = x;
+	this->y = y;
+	std::cout<<"Construvtor called"<<std::endl;
 }
 
-vector2::vector2(const vector2& other)
+
+vector2::vector2(const vector2 &other)
 {
 	*this = other;
-}
-
-vector2::~vector2()
-{
 }
 
 vector2& vector2::operator=(const vector2 &other)
 {
 	if(this == &other)
-		return *this;
+		return (*this);
 	this->x = other.x;
 	this->y = other.y;
-	return(*this);
-}
-
-int& vector2::operator[](int i)
-{
-	if(i == 0)
-		return (this->x);
-	return (this->y);
-}
-
-int vector2::operator[](int i) const
-{
-	if(i == 0)
-		return (this->x);
-	return (this->y);
-}
-
-//+ & - operators
-vector2 vector2::operator-() const
-{
-	vector2 temp = *this;
-	temp[0] = -temp[0];
-	temp[1] = -temp[1];
-	return (temp);
-}
-
-vector2 vector2::operator+(const vector2 &other) const
-{
-	vector2 temp = *this;
-	temp.x += other.x;
-	temp.y += other.y;
-	return (temp);
-}
-
-vector2 vector2::operator-(const vector2 &other) const
-{
-	vector2 temp = *this;
-	temp.x -= other.x;
-	temp.y -= other.y;
-	return (temp);
-}
-
-//++ pre and post
-vector2 &vector2::operator++()
-{
-	this->x += 1;
-	this->y += 1;
 	return (*this);
 }
-vector2 vector2::operator++(int)
-{
-	vector2 temp = *this;
-	this->x += 1;
-	this->y += 1;
-	return (temp);
-}
-// -- pre and post
-vector2 &vector2::operator--()
-{
-	this->x -= 1;
-	this->y -= 1;
-	return (*this);
-}
-vector2 vector2::operator--(int)
-{
-	vector2 temp = *this;
-	this->x += 1;
-	this->y += 1;
-	return (temp);
-}
-//+= & -=
-
-vector2 &vector2::operator+=(const vector2& other)
-{
-	this->x += other.x;
-	this->y += other.y;
-	return (*this);
-}
-vector2 &vector2::operator-=(const vector2& other)
-{
-	this->x -= other.x;
-	this->y -= other.y;
-	return (*this);
-}
-
-//*=
-
-vector2 &vector2::operator*=(const vector2 &other)
-{
-	this->x *= other.x;
-	this->y *= other.y;
-	return (*this);
-}
-
-//operations with number 
-
-vector2 vector2::operator*(int number) const
-{
-	vector2 temp = *this;
-	temp.x = this->x * number;
-	temp.y = this->y * number;
-	return (temp);
-}
-vector2& vector2::operator*=(int number)
-{
-	this->x *= number;
-	this->y *= number;
-	return (*this);
-}
-std::ostream& operator<<(std::ostream &ostream, const vector2 &v)
-{
-	std::cout<< "{" << v[0] << ", " << v[1] << "}"<<std::endl;
-	return (ostream);
-}
-
-
