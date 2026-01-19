@@ -27,3 +27,16 @@ vector2& vector2::operator=(const vector2 &other)
 	this->y = other.y;
 	return (*this);
 }
+
+int	vector2::operator[](int i) const
+{
+	if (i == 0)
+		return this->x;
+	return this->y;
+}
+
+std::ostream&	operator<<(std::ostream& os, const vector2& vector2)
+{
+	std::cout << "{" << vector2[0] << ", " << vector2[1] << "}" << std::endl;
+	return (os);
+}
