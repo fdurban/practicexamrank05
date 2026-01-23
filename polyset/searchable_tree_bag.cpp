@@ -1,4 +1,5 @@
-
+#include "tree_bag.hpp"
+#include "searchable_tree_bag.hpp"
 
 searchable_tree_bag::searchable_tree_bag()
 {
@@ -13,13 +14,13 @@ searchable_tree_bag&	searchable_tree_bag::operator=(const searchable_tree_bag& o
 {
 	if(this == &other)
 		return (*this);
-	array_tree::operator=(other);
+	tree_bag::operator=(other);
 	return *this;
 }
 
 bool	searchable_tree_bag::search(node *node, const int value) const
 {
-	if(node == nullptr)
+	if(node == 0)
 		return false;
 	if (node->value == value)
 		return true;

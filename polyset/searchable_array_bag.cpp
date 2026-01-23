@@ -1,8 +1,9 @@
+#include "array_bag.hpp"
 #include "searchable_array_bag.hpp"
 
 searchable_array_bag::searchable_array_bag()
 {
-	std::cout<<"Searchable array bag default constructor called"<<std::endl;
+
 }
 
 searchable_array_bag::searchable_array_bag(const searchable_array_bag& other): array_bag(other)
@@ -18,12 +19,12 @@ searchable_array_bag&	searchable_array_bag::operator=(const searchable_array_bag
 	return *this;
 }
 
-bool	searchable_array::has(int value) const
+bool	searchable_array_bag::has(int value) const
 {
 	for(int i = 0; i < this->size; i++)
 	{
 		if(this->data[i] == value)
-			return true
+			return true;
 	}
 	return false;
 }

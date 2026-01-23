@@ -2,6 +2,7 @@
 
 // bag veri yapısı, multiset'e denktir. bir veri ve ondan kaç tane bulunduğunu tutan bir yapıdır.
 // abstract class ve hatta interface. bag olan her şey aşağıdaki 4 işlemi yapabilmeli
+
 class bag
 {
  public:
