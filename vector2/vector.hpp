@@ -10,6 +10,10 @@ class vect2
 		vect2(int x, int y);
 		vect2(const vect2& other);
 		vect2&	operator=(const vect2& other);
+		vect2&  operator++();
+		vect2   operator++(int);
+		vect2   operator--(int);
+		vect2&  operator--();
 		~vect2();
 		int	operator[](int i) const;
 };
