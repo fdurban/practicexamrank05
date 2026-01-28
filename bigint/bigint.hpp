@@ -1,17 +1,13 @@
-#include <iostream>
-#include <string>
-#include <sstream>
-
 class bigint
 {
 	private:
 		std::string str;
 	public:
 		bigint();
-		bigint(int num);
-		std::string	getStr() const;
-
+		bigint(unsigned int value);
+		~bigint();
+		bigint(const bigint& other);
+		bigint&	operator=(const bigint& other);
+		std::string	getStr();
+		std::string	reverse();
 };
-
-std::ostream&   operator<<(std::ostream& os, const bigint& obj);
-
